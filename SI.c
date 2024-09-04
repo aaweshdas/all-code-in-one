@@ -3,8 +3,8 @@ int main()
 {
     int p,t,r;
      printf("Please enter the Value of p and t and r = ");
-     scanf("%d", &p , &t ,&r);
-     printf("Simple Interest %d", S=(P*t*r)/100);
+     scanf("%d %d %d", &p , &t ,&r);
+     printf("Simple Interest %d", S =(P * t * r) / 100);
      return 0;
 }
 /*
