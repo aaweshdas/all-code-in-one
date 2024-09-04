@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 
 int main()
 {
@@ -8,10 +8,10 @@ int main()
     printf("The size of int %d",sizeof(int) );
     printf("\nThe size of float %d",sizeof(float) );
     printf("\nThe size of char %d",sizeof(char) );
-     printf("print char %d",c)
-}*/
+     printf("print char %d",c); 
+}
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main()
 {
@@ -21,4 +21,4 @@ int main()
     printf("The size of char %d\n", sizeof(char));
     printf("print char %s\n", c);
     return 0;
-}
+}*/
