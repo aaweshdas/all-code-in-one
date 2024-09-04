@@ -9,6 +9,4 @@ int main()
     printf("multi = %d\n", a*b);
     printf("div = %d\n", a/b);
     return 0;
-    
-
 }
