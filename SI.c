@@ -1,10 +1,10 @@
 #include <Stdio.h>
 int main()
 {
-    int p,t,r;
+    int p,t,r,S;
      printf("Please enter the Value of p and t and r = ");
      scanf("%d %d %d", &p , &t ,&r);
-     printf("Simple Interest %d", S =(P * t * r) / 100);
+     printf("Simple Interest %d", S =(p * t * r) / 100);
      return 0;
 }
 /*
