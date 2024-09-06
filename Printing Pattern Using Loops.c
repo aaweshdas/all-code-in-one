@@ -16,7 +16,7 @@ int main() {
             printf("%d ", n-min);
         }
         printf("\n");
-    } 
+    }  
  
     return 0;
 }
