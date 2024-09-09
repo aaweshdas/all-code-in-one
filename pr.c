@@ -6,4 +6,4 @@ int main()
     j=i++ + ++i;
     printf("%d\n",j);
     printf("%d",i);
-}  
+}   
