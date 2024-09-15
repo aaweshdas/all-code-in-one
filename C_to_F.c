@@ -9,4 +9,3 @@ int main()
     printf("Fahrenheit %f" ,f);
     return 0;
 }
-//  °C × (9/5) + 32
