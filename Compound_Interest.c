@@ -11,4 +11,4 @@ int main()
    a = (p *(1 + r/n)* n* t - p);
    printf("Compound Interest %d", a);
    return 0;
-   }
+   } 
