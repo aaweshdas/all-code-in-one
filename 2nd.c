@@ -21,4 +21,4 @@ int main()
     printf("The size of char %d\n", sizeof(char));
     printf("print char %s\n", c);
     return 0;
-}*/      
+}*/       
