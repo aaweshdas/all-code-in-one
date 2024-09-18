@@ -11,4 +11,4 @@ int main()
     c = (a+b)/2-(a-b)/2;
     printf("largest value is = %d",c);
 
-}
+} 
