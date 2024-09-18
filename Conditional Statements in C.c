@@ -9,7 +9,7 @@
 #include <string.h>
   
 char* readline(); 
-                
+                 
 int main()
 {
     char* n_endptr;
