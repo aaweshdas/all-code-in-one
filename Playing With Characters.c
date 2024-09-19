@@ -22,4 +22,4 @@ int main()
   printf("\n%s",b);
    printf("\n%s",sentence);
     return 0;
-} 
+}  
