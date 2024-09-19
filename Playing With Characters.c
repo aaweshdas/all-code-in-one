@@ -3,7 +3,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-int main() 
+int main()  
 {   
   char a;
   char b[10]; 
