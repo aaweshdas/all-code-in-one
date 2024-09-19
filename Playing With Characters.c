@@ -6,7 +6,7 @@
 int main()  
 {      
   char a;
-  char b[10]; 
+  char b[10];  
   char sentence[200];
    
   
