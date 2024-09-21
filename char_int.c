@@ -8,7 +8,7 @@ int main()
     printf("value of sum : %d\n", sum); // getting the value of the character by adding 1 in it .....
 
     return 0;
-    } 
+    }  
     /*int amin()
     {
         char a='A';
