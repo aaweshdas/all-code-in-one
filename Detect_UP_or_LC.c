@@ -1,8 +1,9 @@
-#include <stdio.h>
+// Analyse the uppercase or lower case
 
-int main() {
+#include <stdio.h>Q
+int main() 
+{
     char ch;
-
     // Input a character
     printf("Enter a character: ");
     scanf("%c", &ch);
@@ -19,6 +20,5 @@ int main() {
     else {
         printf("The character '%c' is not a letter.\n", ch);
     }
-
-    return 0;
-}     
+    return 0; 
+}       
