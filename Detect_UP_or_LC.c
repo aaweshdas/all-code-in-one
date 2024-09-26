@@ -9,11 +9,13 @@ int main()
     scanf("%c", &ch);
 
     // Check if uppercase
-    if (ch >= 'A' && ch <= 'Z') {
+    if (ch >= 'A' && ch <= 'Z')
+     {
         printf("The character '%c' is an uppercase letter.\n", ch);
     }
     // Check if lowercase
-    else if (ch >= 'a' && ch <= 'z') {
+    else if (ch >= 'a' && ch <= 'z')
+     {
         printf("The character '%c' is a lowercase letter.\n", ch);
     }
     // If it's neither uppercase nor lowercase
