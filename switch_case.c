@@ -11,7 +11,7 @@ int main()
     scanf("%d",&n2);
     printf("Enter the operator (+,-,*,/): ");
     scanf("\n%c",&a);
-    switch(a)
+    switch(a)   
     {  
         case '+':
         printf("%d + %d = %d",n1,n2,n1+n2);
