@@ -1,6 +1,6 @@
 // Write a program using a for Loop condition.....
 // #include <stdio.h>
-// int main()
+// int main() 
 // {
 //     int i, n;
 //     printf("enter the i &n value: ");
