@@ -17,7 +17,7 @@ int main()
     int i, n;
     printf("enter the i &n value: ");
     scanf("%d", &n);
-    for(i=0;i<n;i++)
+    for(i=9;i>0;i--)
     {
         printf("%d",i);
     }
