@@ -8,7 +8,7 @@ int findSmallestPositiveInteger(int arr[], int n) {
             res += arr[i];
         } else {
             break;
-        }  
+        }   
     } 
     return res;
 } 
