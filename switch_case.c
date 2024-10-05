@@ -24,7 +24,7 @@ int main()
         break;
         case '/':
         printf("%d / %d = %d",n1,n2,n1/n2);
-        break;
+        break; 
         default:
         printf("Error! Please Enter the Correct Operater , Ha HA ha");
         break;
