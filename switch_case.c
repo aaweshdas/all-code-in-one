@@ -1,4 +1,4 @@
-//Program for Switch case   
+//Program for Switch case    
          
 #include<stdio.h>    
 int main()         
