@@ -28,7 +28,7 @@ int main() {
         printf("Root 1 = %.2lf\n", root1);
         printf("Root 2 = %.2lf\n", root2);
     } else if (discriminant == 0) {
-        // One double root
+        // One double root 
         root1 = root2 = -b / (2 * a);
         printf("Roots are real and the same.\n");
         printf("Root 1 = Root 2 = %.2lf\n", root1);
