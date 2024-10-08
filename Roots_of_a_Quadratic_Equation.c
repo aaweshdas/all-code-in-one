@@ -33,7 +33,7 @@ int main() {
         printf("Roots are real and the same.\n");
         printf("Root 1 = Root 2 = %.2lf\n", root1);
     } else {   
-        // Complex roots
+        // Complex roots 
         double realPart = -b / (2 * a);
         double imaginaryPart = sqrt(-discriminant) / (2 * a);
         printf("Roots are complex and different.\n");
