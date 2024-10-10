@@ -8,7 +8,7 @@ int main() {
     int len, i, isPalindrome = 1; // Assume it is a palindrome
 
     // Input the string from the user
-    printf("Enter a string: ");
+    printf("Enter a string: "); 
     fgets(str, MAX_LEN, stdin);
     
     // Remove the newline character if present
