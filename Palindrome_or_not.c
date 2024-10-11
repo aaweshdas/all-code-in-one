@@ -1,9 +1,9 @@
 #include <stdio.h>    
 #include <string.h>     
-       
-#define MAX_LEN 100     
- 
-int main() {
+
+#define MAX_LEN 100
+
+int main() { 
     char str[MAX_LEN];
     int len, i, isPalindrome = 1; // Assume it is a palindrome
 
