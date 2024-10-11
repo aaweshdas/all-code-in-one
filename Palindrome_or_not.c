@@ -18,7 +18,7 @@ int main() {
 
     // Check for palindrome
     for (i = 0; i < len / 2; i++) {
-        if (str[i] != str[len - i - 1]) {
+        if (str[i] != str[len - i - 1]) { 
             isPalindrome = 0; // Not a palindrome
             break;
         }
