@@ -3,7 +3,7 @@
  
 #define MAX_LEN 100 
  
-int main() { 
+int main() {  
     char str[MAX_LEN];
     int len, i, isPalindrome = 1; // Assume it is a palindrome
 
