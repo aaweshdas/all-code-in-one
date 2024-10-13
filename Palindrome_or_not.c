@@ -1,7 +1,7 @@
 #include <stdio.h>       
 #include <string.h>           
 
-#define MAX_LEN 100  
+#define MAX_LEN 100   
   
 int main() {  
     char str[MAX_LEN];
