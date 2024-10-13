@@ -12,7 +12,7 @@ int main() {
     fgets(str, MAX_LEN, stdin);
     
     // Remove the newline character if present
-    str[strcspn(str, "\n")] = 0;  
+    str[strcspn(str, "\n")] = 0;   
 
     len = strlen(str);
 
