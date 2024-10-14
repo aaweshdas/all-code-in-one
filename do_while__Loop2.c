@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main(){
-	int n;
+	int n; 
 	printf("enter a number to genarate its multpcaltion= ");
 	scanf("%d",&n);
 	int i=1;
