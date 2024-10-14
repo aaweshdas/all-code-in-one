@@ -5,7 +5,6 @@ int main()
     while(i<=5) 
     {
         printf("Given number is positive");
-        
        return 0;
 
     }
