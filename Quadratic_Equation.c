@@ -12,7 +12,7 @@ int main()
     {
     printf("Roots are real and Equal. \n");
     r1=r2=(-b)/(2*a);
-    printf("Root1=%.2f,Root2=%.2f",r1,r2);
+    printf("Root1=%.2f,Root2=%.2f",r1,r2); 
     }
     else if(d>0)
     {
