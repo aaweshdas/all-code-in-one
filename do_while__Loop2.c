@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include<stdio.h> 
 int main(){
 	int n; 
 	printf("enter a number to genarate its multpcaltion= ");
