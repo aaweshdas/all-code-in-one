@@ -3,7 +3,6 @@
   
 int main() { 
     int marks;
-
     printf("Enter your marks (0-100): ");
     scanf("%d", &marks);
 
