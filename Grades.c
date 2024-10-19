@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include<math.h>   
      
-int main() {     
+int main() {      
     int marks;
     printf("Enter your marks (0-100): ");
     scanf("%d", &marks);
