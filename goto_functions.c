@@ -3,7 +3,7 @@
 int main() {
     int i = 0;
     printf("Starting loop...\n");
-
+    
     // Label for the loop
     loop:
     printf("Iteration %d\n", i);
