@@ -11,7 +11,7 @@ int main() {
     // Increment i
     i++;
 
-    // Check if i is less than 5
+    // Check if i is less than 5 
     if (i < 5) {
         // If true, jump to the label 'loop'
         goto loop;
