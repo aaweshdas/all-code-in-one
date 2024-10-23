@@ -1,35 +1,21 @@
-//electricity bill
-#include<stdio.h>
-int main()
-{ 
+#include <stdio.h>
+
+int main() {
     int units;
-    float amount;
     printf("Enter the number of units: ");
-    scanf("%d",&units);
+    scanf("%d", &units);
 
-    if (units>=1 && units<=30){
-        amount=units*2.5;
-    }
-    else if (units>=31 && units<=70){
-        amount=30*2.5 +(units-30)*4.00;
-    }
-    else if (units>=71 && units<=150){
-        amount=30*2.5 + 160 + (units-70)*4.00 ;
-    }
-    else if (units>=151 && units<=250){
-        amount=75+160+480+(units-150)*6.00;
-    }
-    else if (units>=250){
-        amount=75+160+480+800+(units-150)*8.00;
-    }
-    else {
-        printf("Please enter valid units");
-    }
+    if (units < 1) return printf("Please enter valid units\n"), 1;
 
-    printf("Electricity bill = %.2f",amount);
+    float amount = (units <= 30) ? units * 2.5 :
+                   (units <= 70) ? 30 * 2.5 + (units - 30) * 4 :
+                   (units <= 150) ? 30 * 2.5 + 40 * 4 + (units - 70) * 6 :
+                   (units <= 250) ? 30 * 2.5 + 40 * 4 + 80 * 6 + (units - 150) * 6 :
+                                    30 * 2.5 + 40 * 4 + 80 * 6 + 100 * 8 + (units - 250) * 8;
 
+    printf("Electricity bill = %.2f\n", amount);
+    return 0;
 }
-
 
 // #include <stdio.h>
 
