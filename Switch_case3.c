@@ -30,7 +30,7 @@
         
 //         default: 
 //         printf("Invalid input");
-//         }}
+//         }} 
 #include <stdio.h>
 
 int main()  
