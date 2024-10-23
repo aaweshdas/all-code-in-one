@@ -1,6 +1,7 @@
 //electricity bill
 #include<stdio.h>
-int main(){
+int main()
+{ 
     int units;
     float amount;
     printf("Enter the number of units: ");
