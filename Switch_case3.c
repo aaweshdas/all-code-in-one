@@ -27,7 +27,7 @@
 //         case'/':
 //         printf("%d / %d=%d",a,b,a/b);
 //         break;
-        
+   
 //         default: 
 //         printf("Invalid input");
 //         }} 
