@@ -14,7 +14,7 @@ int main()
     switch(a)    
     {      
         case '+':
-        printf("%d + %d = %d",n1,n2,n1+n2);
+        printf("%d + %d = %d",n1,n2,n1+n2); 
         break;
         case '-':  
         printf("%d - %d = %d",n1,n2,n1-n2);
