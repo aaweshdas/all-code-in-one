@@ -7,7 +7,7 @@ int main()
     {
         scanf("%d",&a[i]);
     }
-    
+     
    printf("%d\n",a[4]); 
     
     
