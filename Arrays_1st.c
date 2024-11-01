@@ -1,5 +1,5 @@
 #include <stdio.h>
-int main() 
+int main()  
 {     
     int a[5],i;  
     printf("enter the values:- ");
