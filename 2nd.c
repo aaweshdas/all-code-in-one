@@ -2,7 +2,7 @@
 
 int main()
 {   
-    int a;
+    int a; 
     float b;
     char c[20]="Apple";
     printf("The size of int %d",sizeof(int) );
