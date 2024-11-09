@@ -6,7 +6,7 @@ int main() {
     int a[10] = {20, 50, -3, 15, 9, -6, 1, 4, 18, 23};
     int n = 10;  
     int i, j, temp;
-    printf("Original array: \n");
+    printf("Original Value: \n");
     for(i = 0; i < n; i++) {
         printf("%d ", a[i]);
     }
@@ -23,7 +23,7 @@ int main() {
             }
         }
     }
-    printf("Sorted array: \n");
+    printf("Order Wise Value: \n");
     for(i = 0; i < n; i++) {
         printf("%d ", a[i]);
     }
