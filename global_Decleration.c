@@ -5,7 +5,7 @@ int main()
    // int a,b,c;// local variables
     printf("\nenter the value");
     scanf("%d%d",&a, &b);
-    add(); //calling
+    add (); //calling
 }
 
 
