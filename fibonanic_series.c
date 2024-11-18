@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main() {
 
-  int i, n;
+  int i, n; 
 
   // initialize first and second terms
   int t1 = 0, t2 = 1;
