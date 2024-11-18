@@ -7,7 +7,7 @@ int main() {
   int t1 = 0, t2 = 1;
 
   // initialize the next term (3rd term)
-  int nextTerm = t1 + t2;
+  int nextTerm = t1 + t2; 
 
   // get no. of terms from user
   printf("Enter the number of terms: ");
