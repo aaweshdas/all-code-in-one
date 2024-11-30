@@ -1,59 +1,64 @@
 #include <stdio.h>
 
-#define MAX 10
+int main() {
+    int m, n, p, q, i, j, k;
 
-void multiplyMatrices(int firstMatrix[][MAX], int secondMatrix[][MAX], int resultMatrix[][MAX], int firstRows, int firstCols, int secondCols) {
-    for (int i = 0; i < firstRows; i++) {
-        for (int j = 0; j < secondCols; j++) {
-            resultMatrix[i][j] = 0;
-            for (int k = 0; k < firstCols; k++) {
-                resultMatrix[i][j] += firstMatrix[i][k] * secondMatrix[k][j];
+    // Input dimensions for the first matrix
+    printf("Enter the number of rows and columns of matrix A: ");
+    scanf("%d%d", &m, &n);
+
+    // Input dimensions for the second matrix
+    printf("Enter the number of rows and columns of matrix B: ");
+    scanf("%d%d", &p, &q);
+
+    // Check if matrix multiplication is possible
+    if (n != p) {
+        printf("Matrix multiplication not possible. The number of columns of A must be equal to the number of rows of B.\n");
+        return 0;
+    }
+
+    int a[m][n], b[p][q], c[m][q];
+
+    // Initialize the result matrix to 0
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < q; j++) {
+            c[i][j] = 0;
+        }
+    }
+
+    // Input elements of matrix A
+    printf("Enter the elements of matrix A: \n");
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    // Input elements of matrix B
+    printf("Enter the elements of matrix B: \n");
+    for (i = 0; i < p; i++) {
+        for (j = 0; j < q; j++) {
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    // Perform matrix multiplication
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < q; j++) {
+            for (k = 0; k < n; k++) {
+                c[i][j] += a[i][k] * b[k][j];
             }
         }
     }
-}
 
-void displayMatrix(int matrix[][MAX], int rows, int cols) {
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            printf("%d ", matrix[i][j]);
+    // Print the result matrix
+    printf("The product of the two matrices is: \n");
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < q; j++) {
+            printf("%d ", c[i][j]);
         }
         printf("\n");
     }
-}
-
-int main() {
-    int firstMatrix[MAX][MAX], secondMatrix[MAX][MAX], resultMatrix[MAX][MAX];
-    int firstRows, firstCols, secondRows, secondCols;
-
-    printf("Enter rows and columns for first matrix: ");
-    scanf("%d %d", &firstRows, &firstCols);
-
-    printf("Enter elements of first matrix:\n");
-    for (int i = 0; i < firstRows; i++) {
-        for (int j = 0; j < firstCols; j++) {
-            scanf("%d", &firstMatrix[i][j]);
-        }
-    }
-
-    printf("Enter rows and columns for second matrix: ");
-    scanf("%d %d", &secondRows, &secondCols);
-
-    if (firstCols != secondRows) {
-        printf("Error! Columns of first matrix must equal rows of second matrix.\n");
-        return -1;
-    }
-
-    printf("Enter elements of second matrix:\n");
-    for (int i = 0; i < secondRows; i++) {
-        for (int j = 0; j < secondCols; j++) {
-            scanf("%d", &secondMatrix[i][j]);
-        }
-    }
-
-    multiplyMatrices(firstMatrix, secondMatrix, resultMatrix, firstRows, firstCols, secondCols);
-    printf("Resultant Matrix:\n");
-    displayMatrix(resultMatrix, firstRows, secondCols);
 
     return 0;
 }
