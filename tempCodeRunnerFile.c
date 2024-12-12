@@ -1,1 +1,1 @@
-  int c;
+printf("\n");
