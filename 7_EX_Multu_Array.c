@@ -12,7 +12,7 @@ printf("Enter the number of columns: ");
 	printf("Enter the elements of 1st matrix:\n ");
 	for(i=0;i<r;i++){
 	for(j=0;j<c;j++){
-	printf("Enter (%d,%d)\n",i+1,j+1);
+	printf("Enter (%d,%d)\n",i+1,j+1); 
 	scanf("%d",&arr[i][j]);	
 	}
 }
