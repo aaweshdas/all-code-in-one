@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Phone Image</title>
+<style>
+body {
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.phone {
+    width: 250px;
+    height: 500px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transform: translateY(-50px);
+}
+
+.screen {
+    width: 90%;
+    height: 80%;
+    background-color: #fff;
+    margin: 10px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.ai-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.search-bar {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.microphone {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.name {
+    font-size: 3em;
+    color: #fff;
+    margin-top: 20px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="phone">
+        <div class="screen">
+            <div class="ai-logo">AI</div>
+        </div>
+        <input type="text" class="search-bar" placeholder="Search">
+        <i class="microphone"></i>
+        <i class="search-icon"></i>
+    </div>
+    <div class="name">DOROTHY</div>
+</div>
+
+</body>
+</html>
