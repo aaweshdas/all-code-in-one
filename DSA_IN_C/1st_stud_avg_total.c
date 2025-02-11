@@ -1,4 +1,4 @@
-// write a c program to find,average of n students using structures
+// write a c program to find total,average of n students using structures
 #include <stdio.h>
 struct Student {
     char Name[20];
