@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()  
 {
@@ -8,7 +7,14 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
-        scanf("%d",&n); 
+        scanf("%d",&a[i]); 
     } 
-    
+    mergesort(a,l,h);
 } 
+mergesort(a,l,h)
+{
+    mid=i+h/2;
+    mergesort(a,l,mid);
+    mergesort(a,mid,h);
+    merge()
+}
