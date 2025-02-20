@@ -1,1 +1,1 @@
-getch(); // Waits for a key press
+cout<<i<<endl;

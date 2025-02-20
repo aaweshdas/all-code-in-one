@@ -11,7 +11,7 @@ int main()
 
     // for loops in c++
         //syntax for FOR LoOP
-        //for(initialization;condition;updation)
+        //for(initialization; condition;  updation)
         // {
         //  loop body(c++ code);
         //  }
@@ -23,7 +23,7 @@ int main()
     }
 
     Example for  infinite loop 
-    for (int i = 0; 34 < 40; i++)
+    for (int i = 0; i < 40; i++)
     {
        cout<<i<<endl;
        i++;
