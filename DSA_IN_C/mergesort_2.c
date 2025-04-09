@@ -1,20 +1,22 @@
 #include <stdio.h>
-
-int main()  
+//Quick Sort Implemmentation 
+voin swap(int * a, int*b)
 {
-    int a{10},n,i;
-    scanf("%d",&n);
-
-    for (int i = 0; i < n; i++)
+    int temp = * a;
+    *a = *b;
+    *b = temp;
+}
+int partition(int arr[], int low, int high)
+{
+    int pivot = arr [high];
+    int i = (low - 1);
+    for(int j = low; j < high; j++)
     {
-        scanf("%d",&a[i]); 
-    } 
-    mergesort(a,l,h);
-} 
-mergesort(a,l,h)
-{
-    mid=i+h/2;
-    mergesort(a,l,mid);
-    mergesort(a,mid,h);
-    merge()
+        if (arr[j] < pivot) {
+            i++;
+        }
+    }
+            swap(&arr[i + 1], &arr[high]);
+            return (i + 10;)
+    
 }
