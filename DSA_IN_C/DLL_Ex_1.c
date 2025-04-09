@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 struct Node {
-    int data; 
+    int data;  
     struct Node* prev;
     struct Node* next;
 }; 
