@@ -1,1 +1,1 @@
-cout<<i<<endl;
+ friend void accept(A,B);

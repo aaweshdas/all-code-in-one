@@ -59,7 +59,6 @@ int main() {
     
     int n = sizeof(arr) / sizeof(arr[0]);
     
-    
     printf("Enter the array");
     for (int i = 0; i < n; i++){
         scanf("%d",&arr[i]);
