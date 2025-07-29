@@ -47,9 +47,9 @@ using namespace std;
         {
             cout<<roll_no<<endl;
         }
-        string get_grade(int pin)
+        string getgrade(int pin)
         {
-            if (pin=9889)
+            if (pin=98)
             return grade;
 
             return "invalid";
@@ -64,7 +64,5 @@ using namespace std;
         s.getname();
         s.getage();
         s.getroll_no();
-        cout<<s.get_grade(9889)<<endl;
+               cout<<s.getgrade(98)<<endl;
 }
-
-// 35 minutes video watched 
