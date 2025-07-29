@@ -21,14 +21,19 @@ using namespace std;
         {
             if(age < 0 || age > 20)
             {
-                cout<<"The age is greater than 10"; 
+                cout<<"The age is less than 20"<<endl; 
                 return;
             }
             age = a;
         }
-        void setroll_no(int r)
+
+        void setroll_no(int r) //Rollno function
         {
             roll_no = r;
+        }
+        void setgrade(string s)  //Grade function
+        {
+            cout<<"A+";
         }
         void getname()
         {
@@ -42,19 +47,14 @@ using namespace std;
         {
             cout<<roll_no<<endl;
         }
-        void getgrade(int pin)
+        string get_grade(int pin)
         {
             if (pin=9889)
-            return getgrade;
+            return grade;
 
-            return invalid ;
+            return "invalid";
             cout<<grade<<endl;
         }
-
-        // void getrollno()
-        // {
-        //     return roll_no;
-        // }
 };
     int main() {
         student s;
@@ -64,8 +64,7 @@ using namespace std;
         s.getname();
         s.getage();
         s.getroll_no();
-        cout<<s.getgrade();
-        // cout<<s.getrollno();
+        cout<<s.get_grade(9889)<<endl;
 }
 
 // 35 minutes video watched 
