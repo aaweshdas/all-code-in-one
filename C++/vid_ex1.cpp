@@ -45,7 +45,7 @@ using namespace std;
         } 
         void getroll_no()
         {
-            cout<<roll_no<<endl;
+            cout<<roll_no<<endl; 
         }
         string getgrade(int pin)
         {
