@@ -41,7 +41,7 @@ using namespace std;
         }
         void getage()
         {
-            cout<<age<<endl;
+            cout<<age<<endl; 
         }  
         void getroll_no()
         { 
