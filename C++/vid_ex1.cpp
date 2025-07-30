@@ -38,7 +38,7 @@ using namespace std;
         void getname()
         {
             cout<<name<<endl;
-        }
+        } 
         void getage()
         {
             cout<<age<<endl; 
