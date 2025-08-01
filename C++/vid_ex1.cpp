@@ -46,7 +46,7 @@ using namespace std;
         void getroll_no()
         {  
             cout<<roll_no<<endl; 
-        }
+        } 
         string getgrade(int pin)
         {
             if (pin=98)
