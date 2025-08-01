@@ -65,4 +65,4 @@ using namespace std;
         s.getage();
         s.getroll_no();
         cout<<s.getgrade(98)<<endl;
-}
+} 
