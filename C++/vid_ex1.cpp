@@ -55,7 +55,7 @@ using namespace std;
             return "invalid";
             cout<<grade<<endl;
         }
-};
+}; 
     int main() { 
         student s;
         s.setname("Aawesh");
