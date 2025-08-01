@@ -56,7 +56,7 @@ using namespace std;
             cout<<grade<<endl;
         }
 };
-    int main() {
+    int main() { 
         student s;
         s.setname("Aawesh");
         s.setage (21);
