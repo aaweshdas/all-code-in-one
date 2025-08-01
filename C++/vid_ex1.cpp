@@ -42,7 +42,7 @@ using namespace std;
         void getage()
         {
             cout<<age<<endl; 
-        }  
+        } 
         void getroll_no()
         {  
             cout<<roll_no<<endl; 
