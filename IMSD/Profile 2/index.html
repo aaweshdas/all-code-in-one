@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dark UI Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="dp.jpeg" alt="Profile">
+        <h3>Aawesh Kumar Das</h3>
+        <p>@aaweshdas</p>
+      </div>
+      <nav class="menu">
+        <a href="#" class="active">Dashboard</a> 
+        <a href="#">Messages</a>
+        <a href="#">Friends</a>
+        <a href="#">Groups</a>
+        <a href="#">Photos</a>
+        <a href="#">Videos</a>
+        <a href="#">Settings</a>
+        <a href="#">Logout</a>
+      </nav>
+      <div class="footer">
+        <p>&copy; 2025</p>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <header class="main-header">
+        <h2>Welcome back</h2>
+        <input type="text" placeholder="Search..." />
+      </header>
+
+      <section class="feed">
+        <article class="post">
+          <div class="post-user">
+            <img src="https://i.pravatar.cc/60" alt="user">
+            <div>
+              <h4>Sadik F.</h4>
+              <span>2 hours ago</span>
+            </div>
+          </div>
+          <p>Working on something cool.</p>
+          <div class="post-actions">
+            <button>💬 12</button>
+            <button>❤️ 44</button>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="post-user">
+            <img src="https://i.pravatar.cc/61" alt="user">
+            <div>
+              <h4>Angelina</h4>
+              <span>3 hours ago</span>
+            </div>
+          </div>
+          <p>Dark UI designs are lit 🔥</p>
+          <div class="post-actions">
+            <button>💬 8</button>
+            <button>❤️ 35</button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Right Side Panels -->
+    <aside class="rightbar">
+      <div class="card profile-card">
+        <h3>Insight</h3>
+        <p>Recent top video</p>
+        <div class="video-preview">
+          <img src="dp.jpeg" alt="video thumbnail" />
+          <div>
+            <p>by @verak</p>
+            <span>740 views</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card stats-card">
+        <h3>Statistics</h3>
+        <ul>
+          <li>👍 Likes: 5.4K</li>
+          <li>🗨️ Comments: 1.2K</li>
+          <li>👁️ Views: 3 5K</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>

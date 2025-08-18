@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1a1f2b;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .dashboard {
+    display: flex;
+    width: 100%;
+    max-width: 1600px;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 240px;
+    background-color: #10131a;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .sidebar .profile {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar .profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #00bcd4;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar .profile h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+  
+  .sidebar .profile p {
+    font-size: 12px;
+    color: #ccc;
+  }
+  
+  .menu a {
+    display: block;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .menu a.active,
+  .menu a:hover {
+    background-color: #00bcd4;
+    color: #fff;
+  }
+  
+  /* Main Section */
+  .main {
+    flex: 1;
+    background-color: #1e2533;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .main-header input {
+    padding: 8px 12px;
+    background: #2b3140;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+  }
+  
+  .feed {
+    margin-top: 20px;
+  }
+  
+  .post {
+    background-color: #2b3140;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .post-user {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    margin-bottom: 10px;
+  }
+  
+  .post-user img {
+    width: 50px;
+    border-radius: 50%;
+  }
+  
+  .post-actions {
+    margin-top: 10px;
+  }
+  
+  .post-actions button {
+    background: none;
+    border: none;
+    color: #00bcd4;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  
+  /* Right Sidebar */
+  .rightbar {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #1e2533;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .profile-card .video-preview {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .video-preview img {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+  }
+  
+  .stats-card ul {
+    list-style: none;
+    padding-top: 10px;
+  }
+  
+  .stats-card li {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  
