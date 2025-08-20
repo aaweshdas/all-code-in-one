@@ -7,6 +7,6 @@ namespace A{
 }
 int main()
 {
-    A::print(); 
+    A::print();  
      
 }
