@@ -7,7 +7,7 @@ class Car:
     def stop(self): print(f"{self.year} {self.make} {self.model} stopped.") if self.running else print("Already stopped"); self.running=False
 
 # Example
-car = Car("Toyota", "Baklol", 2022)
+car = Car("Toyota", "Baklol", 2022) 
 car.start() 
 car.stop()
  
