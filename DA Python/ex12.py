@@ -8,6 +8,5 @@ class Car:
 
 # Example
 car = Car("Toyota", "Baklol", 2022) 
-car.start() 
+car.start()  
 car.stop()
- 
