@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Input</title>
+</head>
+<body>
+  <h1>Getting input from HTML Elements</h1>
+  <form>
+    <table border="1" cellpadding="8">
+      <tr>
+        <td><label for="name">Enter Name</label></td>
+        <td><input type="text" id="name" name="name"></td>
+      </tr>
+
+      <tr>
+        <td><label for="email">Enter Mail ID</label></td>
+        <td><input type="email" id="email" name="email"></td>
+      </tr>
+
+      <tr>
+        <td><label for="address">Address</label></td>
+        <td><textarea id="address" name="address"></textarea></td>
+      </tr>
+
+      <tr>
+        <td><label for="country">Select Your Country</label></td>
+        <td>
+          <select id="country" name="country">
+            <option value="india">India</option>
+            <option value="china">China</option>
+            <option value="japan">Japan</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label>Select Gender</label></td>
+        <td>
+          <input type="radio" name="gender" value="Male"> Male
+          <input type="radio" name="gender" value="Female"> Female
+          <input type="radio" name="gender" value="Other"> Other
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2" style="text-align:center;">
+          <button type="submit">Submit</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+</body>
+</html>

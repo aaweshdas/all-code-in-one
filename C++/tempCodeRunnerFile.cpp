@@ -1,16 +1,18 @@
 #include <iostream>
 using namespace std;
 
-class A {
-public:
-    class B {
-    public:
-        int b = 30;
-    };
-};
+void divide(int a, int b) {
+    if (b == 0)
+        throw "Division by zero error!";
+    cout << "Result: " << a / b << endl;
+}
 
 int main() {
-    A::B obj;        // Access inner class using scope
-    cout << obj.b;   // Print value
+    try {
+        divide(10, 0);
+    } 
+    catch (const char* msg) {
+        cout << "Exception: " << msg << endl;
+    }
     return 0;
 }
