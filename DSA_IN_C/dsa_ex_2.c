@@ -11,4 +11,4 @@ int main()
     scanf("%d %s %s",&b1.bookid,&b1.a_name[50],&b1.title[50]);
     printf("%d %c %c",b1.bookid,b1.a_name[50],b1.title[50]);
     printf("%d\n",sizeof(struct book));
-}
+}   

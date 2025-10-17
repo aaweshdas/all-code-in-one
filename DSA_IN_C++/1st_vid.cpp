@@ -14,7 +14,7 @@ int main()
         cout<<" a is greater than b "<<endl;
     }
     else if (a<b)
-    {
+    { 
         cout<<" a is less than b "<<endl;
     }*/
  
