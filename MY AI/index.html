@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus-UI: Advanced AI Control Core</title>
+    
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #00e0ff; /* Cyan/Light Blue */
+            --secondary-color: #0080ff; /* Deeper Blue */
+            --accent-color: #ff0077; /* Magenta for alerts/active states */
+            --dark-background: #00020d; /* Ultra dark */
+            --mid-background: rgba(10, 10, 30, 0.7);
+            --light-text: #e0e0e0;
+            --holographic-border: rgba(0, 224, 255, 0.5);
+            --font-mono: 'Share Tech Mono', monospace;
+            --font-sans: 'Orbitron', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-mono);
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-background);
+            color: var(--light-text);
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "left-panel center-panel right-panel"
+                "footer footer footer";
+            grid-template-columns: 320px 1fr 320px;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* --- Global Holographic Panel Styling --- */
+        .panel {
+            background-color: var(--mid-background);
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--holographic-border);
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 224, 255, 0.4);
+            padding: 20px;
+            margin: 10px;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .panel:hover {
+            box-shadow: 0 0 40px var(--primary-color);
+        }
+
+        .panel-title {
+            color: var(--primary-color);
+            font-family: var(--font-sans);
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid rgba(0, 224, 255, 0.3);
+            padding-bottom: 8px;
+            text-shadow: 0 0 8px var(--primary-color);
+        }
+
+        /* --- Header --- */
+        header {
+            grid-area: header;
+            background-color: var(--dark-background);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--primary-color);
+            box-shadow: 0 6px 30px rgba(0, 224, 255, 0.5);
+            z-index: 10;
+        }
+        header .title {
+            font-family: var(--font-sans);
+            color: var(--primary-color);
+            font-size: 2em;
+            text-shadow: 0 0 12px var(--primary-color);
+            letter-spacing: 3px;
+        }
+        .top-info {
+            display: flex;
+            gap: 25px;
+            font-size: 1em;
+        }
+        .top-info i {
+            color: var(--secondary-color);
+            font-size: 1.2em;
+        }
+        #current-time, #current-date {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* --- Center Panel (The Galactic Core) --- */
+        .center-panel {
+            grid-area: center-panel;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 20px;
+            z-index: 5;
+        }
+
+        #galaxy-core {
+            display: block;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 0 50px var(--accent-color);
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 0, 119, 0.1) 0%, rgba(255, 0, 119, 0) 70%);
+            transition: all 0.5s ease-in-out;
+        }
+        #galaxy-core:hover {
+            box-shadow: 0 0 80px var(--accent-color), 0 0 20px var(--primary-color);
+        }
+        
+        /* The main chat interface is now below the core */
+        .chat-interface {
+            width: 80%;
+            max-width: 600px;
+            background-color: rgba(10, 10, 30, 0.9);
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            box-shadow: 0 0 30px var(--primary-color);
+            padding: 20px;
+            margin-top: 30px;
+            transform: translateZ(50px); /* Lift it off the screen for holographic feel */
+            position: relative;
+        }
+        
+        #chat-output {
+            height: 150px;
+            overflow-y: auto;
+            border-bottom: 1px dashed rgba(0, 224, 255, 0.3);
+            margin-bottom: 15px;
+            padding-right: 10px;
+            font-size: 0.9em;
+        }
+        .chat-message.ai { color: var(--accent-color); }
+        .chat-message.user { color: var(--light-text); text-align: right; }
+        .chat-message { margin-bottom: 5px; }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+        #user-input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border: 1px solid var(--secondary-color);
+            border-radius: 20px;
+            background-color: var(--dark-background);
+            color: var(--light-text);
+            font-size: 1em;
+            outline: none;
+            box-shadow: inset 0 0 8px rgba(0, 224, 255, 0.2);
+        }
+        #send-btn {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            color: var(--dark-background);
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 224, 255, 0.4);
+            font-family: var(--font-sans);
+            transition: all 0.3s ease;
+        }
+
+        /* --- Left Panel (Streaming Data) --- */
+        .left-panel {
+            grid-area: left-panel;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .data-stream-panel {
+            flex-grow: 1;
+        }
+        
+        .stream-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(0, 224, 255, 0.1);
+            font-size: 0.85em;
+        }
+        .stream-label {
+            color: var(--secondary-color);
+        }
+        .stream-value {
+            color: var(--light-text);
+        }
+        
+        /* Loading Bar Simulation */
+        .progress-container {
+            height: 8px;
+            background-color: rgba(0, 224, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        .progress-bar {
+            height: 100%;
+            width: var(--progress-percent, 0%);
+            background: linear-gradient(90deg, transparent, var(--primary-color));
+            transition: width 0.5s ease;
+            box-shadow: 0 0 5px var(--primary-color);
+            animation: stream-flow 2s infinite linear;
+        }
+        @keyframes stream-flow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        /* --- Right Panel (AI Features) --- */
+        .right-panel {
+            grid-area: right-panel;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: rgba(0, 128, 255, 0.1);
+            border-left: 5px solid var(--secondary-color);
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        .feature-card:hover {
+            background-color: rgba(0, 128, 255, 0.2);
+            border-left-color: var(--accent-color);
+        }
+        .feature-card i {
+            font-size: 2em;
+            margin-right: 15px;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+        .feature-info strong {
+            display: block;
+            color: var(--light-text);
+            font-family: var(--font-sans);
+            font-size: 1em;
+        }
+        .feature-info span {
+            font-size: 0.8em;
+            color: var(--secondary-color);
+        }
+        
+        /* Security Status specific styling */
+        .security-status {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #00ff80; /* Green for Secure */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 0 5px #00ff80;
+            animation: secure-glow 1s infinite alternate;
+        }
+        @keyframes secure-glow {
+            from { opacity: 1; }
+            to { opacity: 0.8; }
+        }
+
+        /* --- Footer --- */
+        footer {
+            grid-area: footer;
+            background-color: var(--dark-background);
+            color: var(--light-text);
+            text-align: center;
+            padding: 15px 30px;
+            border-top: 2px solid var(--secondary-color);
+            box-shadow: 0 -4px 20px rgba(0, 128, 255, 0.3);
+            font-size: 0.9em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+        .footer-status {
+            color: var(--accent-color);
+            font-family: var(--font-sans);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 0 5px var(--accent-color);
+        }
+        .footer-status i {
+            font-size: 1.2em;
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 1200px) {
+            body {
+                grid-template-columns: 250px 1fr 250px;
+            }
+            .panel {
+                padding: 15px;
+            }
+        }
+        @media (max-width: 992px) {
+            body {
+                grid-template-areas:
+                    "header header header"
+                    "center-panel center-panel center-panel"
+                    "left-panel left-panel left-panel"
+                    "right-panel right-panel right-panel"
+                    "footer footer footer";
+                grid-template-columns: 1fr;
+            }
+            #galaxy-core {
+                width: 300px;
+                height: 300px;
+            }
+            .chat-interface {
+                max-width: 90%;
+            }
+        }
+        @media (max-width: 600px) {
+            header .title { font-size: 1.5em; }
+            .top-info { display: none; }
+            #galaxy-core { width: 200px; height: 200px; }
+            .footer-status { font-size: 0.8em; }
+            footer { padding: 10px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">Nexus-AI Core</div>
+        <div class="top-info">
+            <span><i class="fas fa-clock"></i> <span id="current-time">00:00:00</span></span>
+            <span><i class="fas fa-calendar-alt"></i> <span id="current-date">00/00/0000</span></span>
+        </div>
+    </header>
+
+    <div class="left-panel">
+        <div class="panel data-stream-panel">
+            <div class="panel-title">Data Stream Monitor</div>
+            <div class="stream-item">
+                <span class="stream-label">CPU Load:</span>
+                <span class="stream-value" id="cpu-load">0%</span>
+            </div>
+            <div class="progress-container"><div class="progress-bar" id="cpu-bar" style="--progress-percent: 0%;"></div></div>
+            
+            <div class="stream-item" style="margin-top: 15px;">
+                <span class="stream-label">RAM Usage:</span>
+                <span class="stream-value" id="ram-usage">0%</span>
+            </div>
+            <div class="progress-container"><div class="progress-bar" id="ram-bar" style="--progress-percent: 0%;"></div></div>
+
+            <div class="stream-item" style="margin-top: 15px;">
+                <span class="stream-label">Network Latency:</span>
+                <span class="stream-value" id="ping-value">0ms</span>
+            </div>
+            <div class="progress-container"><div class="progress-bar" id="ping-bar" style="--progress-percent: 0%;"></div></div>
+            
+            <div class="stream-item" style="margin-top: 15px;">
+                <span class="stream-label">Task Queue:</span>
+                <span class="stream-value" id="task-queue">0</span>
+            </div>
+            <div class="progress-container"><div class="progress-bar" id="queue-bar" style="--progress-percent: 0%;"></div></div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-title">Task Management</div>
+            <div class="feature-card" data-task="schedule">
+                <i class="fas fa-calendar-check"></i>
+                <div class="feature-info">
+                    <strong>Schedule Event</strong>
+                    <span>Integrate with personal calendar.</span>
+                </div>
+            </div>
+            <div class="feature-card" style="margin-top: 10px;" data-task="security">
+                <i class="fas fa-shield-alt"></i>
+                <div class="feature-info">
+                    <strong>Run Security Scan</strong>
+                    <span>Initiates deep network diagnostics.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="center-panel">
+        <canvas id="galaxy-core" width="400" height="400"></canvas>
+        
+        <div class="chat-interface">
+            <div id="chat-output">
+                <div class="chat-message ai">Core Initialized. Nexus-AI ready for command.</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Enter Command..." autofocus>
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-panel">
+        <div class="panel">
+            <div class="panel-title">System Status Report</div>
+            <div class="security-status">
+                <i class="fas fa-lock"></i>
+                <span>SYSTEM SECURE. PROTOCOL N-07 ACTIVE.</span>
+            </div>
+            <div class="feature-card" style="margin-top: 20px;" data-task="forecast">
+                <i class="fas fa-cloud-sun"></i>
+                <div class="feature-info">
+                    <strong>Global Forecast</strong>
+                    <span id="global-forecast">Analyzing atmospheric data...</span>
+                </div>
+            </div>
+            <div class="feature-card" style="margin-top: 10px;" data-task="data-integrity">
+                <i class="fas fa-database"></i>
+                <div class="feature-info">
+                    <strong>Data Integrity Check</strong>
+                    <span id="data-integrity-status">Last check: 0 minutes ago.</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="panel">
+            <div class="panel-title">Configuration Profiles</div>
+            <div class="feature-card" data-task="profile-a">
+                <i class="fas fa-user-astronaut"></i>
+                <div class="feature-info">
+                    <strong>Profile A: Deep Learning</strong>
+                    <span>Optimized for heavy computation.</span>
+                </div>
+            </div>
+            <div class="feature-card" style="margin-top: 10px;" data-task="profile-b">
+                <i class="fas fa-users"></i>
+                <div class="feature-info">
+                    <strong>Profile B: Social Interaction</strong>
+                    <span>Prioritizes communication speed.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-status">
+            <i class="fas fa-brain"></i>
+            <span>CORE STATUS: HYPER-STABLE</span>
+        </div>
+        <span>Nexus-AI v3.0 | Command Input Latency: <span id="latency-ms">20</span>ms</span>
+        <div class="footer-status">
+            <i class="fas fa-microchip"></i>
+            <span>ENERGY: 99%</span>
+        </div>
+    </footer>
+
+    <script>
+        // --- Core UI Logic ---
+        const chatOutput = document.getElementById('chat-output');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+        const canvas = document.getElementById('galaxy-core');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const numParticles = 80;
+
+        // Particle Class for the Galaxy Core
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.radius = Math.random() * 2 + 1; // Star size
+                this.vx = Math.random() * 0.5 - 0.25; // Velocity x
+                this.vy = Math.random() * 0.5 - 0.25; // Velocity y
+                this.color = `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.5})`;
+                this.glow = `rgba(255, 0, 119, ${Math.random() * 0.4 + 0.3})`;
+            }
+
+            draw() {
+                ctx.beginPath();
+                // Star body
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.shadowColor = this.glow;
+                ctx.shadowBlur = this.radius * 5;
+                ctx.fill();
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Loop particles when they go off screen
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                }
+            }
+        }
+
+        function initGalaxy() {
+            particles = [];
+            for (let i = 0; i < numParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function drawConnections() {
+            const maxDistance = 70; // Max distance for lines to connect
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < maxDistance) {
+                        const opacity = 1 - (distance / maxDistance);
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(0, 224, 255, ${opacity * 0.5})`; // Cyan connections
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateGalaxy() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.shadowBlur = 0; // Reset shadow for connections
+
+            drawConnections();
+
+            for (const p of particles) {
+                p.update();
+                p.draw();
+            }
+
+            requestAnimationFrame(animateGalaxy);
+        }
+
+        // --- Data Simulation and Update ---
+        function updateData() {
+            // Simulated data
+            const cpu = Math.floor(Math.random() * 80) + 10;
+            const ram = Math.floor(Math.random() * 70) + 20;
+            const ping = Math.floor(Math.random() * 40) + 10;
+            const queue = Math.floor(Math.random() * 10) + 1;
+            const queuePercent = (queue / 10) * 100;
+
+            // Update DOM
+            document.getElementById('cpu-load').textContent = `${cpu}%`;
+            document.getElementById('ram-usage').textContent = `${ram}%`;
+            document.getElementById('ping-value').textContent = `${ping}ms`;
+            document.getElementById('task-queue').textContent = queue;
+            document.getElementById('latency-ms').textContent = ping + 10; // Footer latency is slightly higher
+
+            // Update Progress Bars (CSS Variables)
+            document.getElementById('cpu-bar').style.setProperty('--progress-percent', `${cpu}%`);
+            document.getElementById('ram-bar').style.setProperty('--progress-percent', `${ram}%`);
+            // Ping bar fills less for low ping (good) and more for high ping (bad)
+            document.getElementById('ping-bar').style.setProperty('--progress-percent', `${(ping / 50) * 100}%`); 
+            document.getElementById('queue-bar').style.setProperty('--progress-percent', `${queuePercent}%`);
+
+            // Update Date/Time
+            const now = new Date();
+            document.getElementById('current-time').textContent = now.toLocaleTimeString();
+            document.getElementById('current-date').textContent = now.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+        }
+
+        // --- AI Response Logic (Advanced Features) ---
+        async function getAiResponse(userMessage) {
+            userMessage = userMessage.toLowerCase().trim();
+            let response = "Nexus-AI doesn't recognize that command. Try 'help' or click a feature card.";
+            
+            // Simulating AI thinking with a delay and blinking cursor effect
+            const aiTypingIndicator = '<div class="chat-message ai">...</div>';
+            chatOutput.innerHTML += aiTypingIndicator;
+            chatOutput.scrollTop = chatOutput.scrollHeight;
+            await new Promise(resolve => setTimeout(resolve, Math.random() * 1500 + 500)); // Delay
+
+            // Remove indicator
+            chatOutput.lastChild.remove();
+            
+            if (userMessage.includes("help") || userMessage.includes("commands")) {
+                response = "Available commands: 'status', 'security check', 'time', 'forecast', 'profile A/B'.";
+            } else if (userMessage.includes("status")) {
+                const cpu = document.getElementById('cpu-load').textContent;
+                const ram = document.getElementById('ram-usage').textContent;
+                response = `Current status: Core stable. CPU at ${cpu}, RAM at ${ram}. All systems nominal.`;
+            } else if (userMessage.includes("security check")) {
+                response = "Initiating Security Protocol N-07... Firewall integrity at 100%. All vectors clear. System secure.";
+            } else if (userMessage.includes("time")) {
+                response = `The temporal signature is: ${new Date().toLocaleTimeString()} on ${new Date().toLocaleDateString()}.`;
+            } else if (userMessage.includes("forecast")) {
+                response = "Global atmospheric analysis complete. Expecting localized solar flares and stable weather for the next 48 hours.";
+            } else if (userMessage.includes("profile a")) {
+                response = "Switching to Deep Learning Profile A. Computational resources allocated. Standby for massive data processing.";
+            } else if (userMessage.includes("profile b")) {
+                response = "Switching to Social Interaction Profile B. Communication protocols optimized. Ready for seamless dialogue.";
+            }
+
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('chat-message', 'ai');
+            messageElement.textContent = response;
+            chatOutput.appendChild(messageElement);
+            chatOutput.scrollTop = chatOutput.scrollHeight;
+        }
+
+        // --- Event Listeners ---
+        sendBtn.addEventListener('click', async () => {
+            const userMessage = userInput.value.trim();
+            if (userMessage) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('chat-message', 'user');
+                messageElement.textContent = userMessage;
+                chatOutput.appendChild(messageElement);
+                userInput.value = ''; // Clear input
+                chatOutput.scrollTop = chatOutput.scrollHeight;
+
+                await getAiResponse(userMessage);
+            }
+        });
+
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendBtn.click();
+            }
+        });
+        
+        // Feature Card interaction
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const task = card.dataset.task;
+                const taskName = card.querySelector('strong').textContent;
+                
+                // Simulate sending a command based on card click
+                userInput.value = taskName;
+                sendBtn.click(); 
+            });
+        });
+
+
+        // --- Initialize UI ---
+        initGalaxy();
+        animateGalaxy();
+        updateData();
+        setInterval(updateData, 2000); // Update data every 2 seconds
+    </script>
+</body>
+</html>
