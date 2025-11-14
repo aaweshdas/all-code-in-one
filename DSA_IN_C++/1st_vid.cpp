@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {  
-  
+   
  
     /*    Which is minimum in the given number a and b
 
