@@ -8,7 +8,7 @@ int main()
 
        int a , b;
     cout<<"Enter the number"<<endl;
-    cin>>a , b;
+    cin>>a , b; 
     if (a>b)
     {
         cout<<" a is greater than b "<<endl;
