@@ -7,7 +7,7 @@ int main()
     /*    Which is minimum in the given number a and b
 
        int a , b;
-    cout<<"Enter the number"<<endl;
+    cout<<"Enter the number"<<endl; 
     cin>>a , b; 
     if (a>b)
     {
