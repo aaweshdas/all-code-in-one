@@ -29,6 +29,5 @@ int main()
     } else {
         cout<<"the given number is odd";
     }
-    
     return 0;
 }
