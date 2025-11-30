@@ -11,7 +11,7 @@ def print_lines_in_reverse(input_file_path, output_file_path):
                 reversed_line = line.strip()[::-1]  # Reverse and strip whitespace
                 output_file.write(reversed_line + '\n')
 
-        print(f"Reversed lines successfully written to {output_file_path}")
+        print(f"Reversed lines successfully written to {output_file_path}") 
 
     except FileNotFoundError:
         print(f"The file {input_file_path} does not exist.")
