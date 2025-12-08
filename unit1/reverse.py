@@ -9,7 +9,7 @@ def print_lines_in_reverse(input_file_path, output_file_path):
             # Reverse each line and write to the output file
             for line in lines:
                 reversed_line = line.strip()[::-1]  # Reverse and strip whitespace
-                output_file.write(reversed_line + '\n')
+                output_file.write(reversed_line + '\n') 
 
         print(f"Reversed lines successfully written to {output_file_path}")  
 
