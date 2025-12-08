@@ -24,4 +24,4 @@ input_file_path = input("Enter the full path to the input file (with extension):
 output_file_path = input("Enter the full path to the output file (with extension): ")
 
 print_lines_in_reverse(input_file_path, output_file_path)
-  
+   
