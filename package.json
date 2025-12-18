@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "name": "programming-codes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aaweshdas/C.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Aaweshdas/C/issues"
+  },
+  "homepage": "https://github.com/Aaweshdas/C#readme"
+}
