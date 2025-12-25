@@ -10,7 +10,7 @@ class Ast {
             temp /= 10;
         }
 
-        if (sum == n)
+        if (sum == n) 
             System.out.println("Armstrong Number");
         else
             System.out.println("Not an Armstrong Number");
