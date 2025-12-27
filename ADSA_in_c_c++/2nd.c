@@ -9,7 +9,7 @@ int main() {
     scanf("%d", &size);
 
     int hashTable[size];
- 
+  
     // Initialize hash table
     for (i = 0; i < size; i++)
         hashTable[i] = INT_MIN;
