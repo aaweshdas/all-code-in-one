@@ -4,7 +4,7 @@
 
 int main() { 
     int size, n, key, i;
-
+ 
     printf("Enter Size of hash table: ");
     scanf("%d", &size);
 
