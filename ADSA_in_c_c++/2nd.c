@@ -21,7 +21,7 @@ int main() {
         printf("Insertion not possible\n");
         exit(0);
     }
-
+ 
     printf("Enter %d elements:\n", n);
 
      
