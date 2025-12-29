@@ -7,7 +7,7 @@ int main() {
  
     printf("Enter Size of hash table: ");
     scanf("%d", &size);
-
+ 
     int hashTable[size];
    
     // Initialize hash table
