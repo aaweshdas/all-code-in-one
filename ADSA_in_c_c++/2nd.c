@@ -14,7 +14,7 @@ int main() {
     for (i = 0; i < size; i++)
         hashTable[i] = INT_MIN;
 
-    printf("Enter number of elements to insert: ");
+    printf("Enter number of elements to insert: "); 
     scanf("%d", &n);
 
     if (n > size) {
