@@ -1,0 +1,2 @@
+All Code in One is a centralized multi-language code repository that consolidates source code, practice files, and project implementations across different programming subjects and technologies.
+It includes organized folders for C, C++, Java, Python, Web Development, Data Structures & Algorithms, Database Management Systems (DBMS), and more, making it a valuable learning resource and reference collection for students and developers.
