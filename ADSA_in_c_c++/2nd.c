@@ -2,7 +2,7 @@
 #include <limits.h>
 #include <stdlib.h>
  
-int main() { 
+int main() {  
     int size, n, key, i;
  
     printf("Enter Size of hash table: ");
