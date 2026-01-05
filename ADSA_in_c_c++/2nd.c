@@ -16,7 +16,7 @@ int main() {
 
     printf("Enter number of elements to insert: "); 
     scanf("%d", &n);
-
+ 
     if (n > size) {
         printf("Insertion not possible\n");
         exit(0);
