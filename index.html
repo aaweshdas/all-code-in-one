@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard Wireframe - Project X</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+}
+.header {
+  text-align: center;
+  padding: 12px;
+  font-weight: bold;
+  background: #fff;
+  border-bottom: 2px solid #ccc;
+}
+.dashboard {
+  padding: 10px;
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 10px;
+}
+.top {
+  display: grid;
+  grid-template-columns: 3fr 1.3fr;
+  gap: 10px;
+}
+.card {
+  background: #fff;
+  border: 2px solid #444;
+  border-radius: 6px;
+  padding: 10px;
+}
+.chart {
+  height: 180px;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  border-left: 2px solid #aaa;
+  border-bottom: 2px solid #aaa;
+  padding: 10px;
+}
+.bar {
+  width: 28px;
+  background: repeating-linear-gradient(
+    45deg,
+    #999,
+    #999 5px,
+    #ccc 5px,
+    #ccc 10px
+  );
+}
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1.2fr;
+  gap: 10px;
+}
+.stats {
+  display: grid;
+  gap: 8px;
+}
+.stat {
+  border: 2px solid #444;
+  background: #fff;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #444;
+  padding: 6px;
+  font-size: 12px;
+}
+.map {
+  height: 250px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ddd,
+    #ddd 10px,
+    #eee 10px,
+    #eee 20px
+  );
+}
+.footer {
+  text-align: center;
+  padding: 8px;
+  font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">Dashboard Wireframe – Project X</div>
+
+<div class="dashboard">
+
+  <div class="top">
+    <div class="card">
+      <b>Weekly Trends</b>
+      <div class="chart">
+        <div class="bar" style="height:30%"></div>
+        <div class="bar" style="height:40%"></div>
+        <div class="bar" style="height:50%"></div>
+        <div class="bar" style="height:60%"></div>
+        <div class="bar" style="height:70%"></div>
+        <div class="bar" style="height:80%"></div>
+        <div class="bar" style="height:90%"></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <b>SLA Updates</b>
+        <ul>
+          <li>Update pending – High</li>
+          <li>Resolved – Ticket #1234</li>
+          <li>Waiting for customer</li>
+          <li>Escalated</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <b>Department Analytics</b>
+        <p>Sales – 75%</p>
+        <p>Support – 90%</p>
+        <p>Engineering – 50%</p>
+        <p>Marketing – 65%</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="stats">
+      <div class="stat">1,245<br>Total Users</div>
+      <div class="stat">98%<br>Uptime</div>
+      <div class="stat">456<br>Active Tickets</div>
+      <div class="stat">12m<br>Avg Response</div>
+    </div>
+
+    <div class="card">
+      <b>Recent Complaints</b>
+      <table>
+        <tr>
+          <th>ID</th><th>Customer</th><th>Issue</th><th>Date</th><th>Status</th>
+        </tr>
+        <tr>
+          <td>C-001</td><td>John Doe</td><td>Billing</td><td>2024-10-27</td><td>Open</td>
+        </tr>
+        <tr>
+          <td>C-002</td><td>Jane Smith</td><td>Technical</td><td>2024-10-26</td><td>Resolved</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card map">
+      <b>Geographic Distribution</b>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">Home | Settings | Help | Privacy Policy</div>
+
+</body>
+</html>
