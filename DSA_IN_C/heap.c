@@ -6,7 +6,7 @@ void maxHeapifyDown(int);
 void insertMaxHeap(int);
 void deleteMaxHeap();
 void displayMaxHeap();
-void minHeapifyUp(int); 
+void minHeapifyUp(int);
 void minHeapifyDown(int);
 
 int maxHeap[MAX], minHeap[MAX];
