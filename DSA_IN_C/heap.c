@@ -14,7 +14,7 @@ int maxSize = 0, minSize = 0;
 void swap(int *a, int *b) {
     int temp = *a;
     *a = *b;
-    *b = temp;
+    *b = temp; 
 }
 void insertMaxHeap(int value) {
     maxHeap[maxSize] = value;
