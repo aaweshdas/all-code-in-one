@@ -10,7 +10,7 @@ void minHeapifyUp(int);
 void minHeapifyDown(int);
 
 int maxHeap[MAX], minHeap[MAX];
-int maxSize = 0, minSize = 0;
+int maxSize = 0, minSize = 0; 
 void swap(int *a, int *b) {
     int temp = *a;
     *a = *b;
