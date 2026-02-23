@@ -1,80 +1,53 @@
 #include <stdio.h>
-void merge(int a[], int low, int mid, int high)
-{
-    int i, j, k, b[20];
-    i = low;
-    j = mid + 1;
-    k = low;
-    while(i <= mid && j <= high)
-    {
-        if(a[i] >= a[j])
-        {
-            c[k++] = a[j++];
-        }
-        else
-        {
-            c[k++] = a[i++];
-        }
-    }
-    while(i <= mid)
-    {
-        c[k++] = a[i++];
-    }
-    while(j <= high)
-    {
-        c[k++] = a[j++];
-    }
-    for(i = low; i <= high; i++)
-    {
-        a[i] = c[i];
-    }
-}    
-int main()
-{
-    int a[20], i, n, low, high;
+void merge(int a[], int low, int mid, int high);
+void msortdiv(int a[], int low, int high);
+int main() {
+    int a[100], i, n; 
     printf("Enter the size of array: ");
-    scanf("%d", &n);
-    printf("Enter the elements into the array: ");
-    for(i=0; i<n; i++)
-    {
+    if (scanf("%d", &n) != 1 || n > 100) {
+        printf("Invalid size.\n");
+        return 1;
+    }
+    printf("Enter the elements: ");
+    for(i = 0; i < n; i++) {
         scanf("%d", &a[i]);
     }
-    low = 0;
-    high = n-1;
-    msortdiv(a, low, high);
-    printf("\n array after getting merge sort: ");
-    for(i=0; i<n; i++)    {
-        printf("\n%d ", a[i]);
+    msortdiv(a, 0, n - 1);
+    printf("\nArray after Merge Sort: ");
+    for(i = 0; i < n; i++) {
+        printf("%d ", a[i]);
     }
+    printf("\n");
+
     return 0;
 }
-void msortdiv(int a[], int low, int high)
-{
-    int mid;
-    if(low != high)
-    {
-        mid = (low + high) / 2;
+void msortdiv(int a[], int low, int high) {
+    if (low < high) { 
+        int mid = (low + high) / 2;
         msortdiv(a, low, mid);
-        msortdiv(a, mid+1, high);
+        msortdiv(a, mid + 1, high);
         merge(a, low, mid, high);
     }
 }
-int main()
-{
-    int a[20], i, n, low, high;
-    printf("Enter the size of array: ");
-    scanf("%d", &n);
-    printf("Enter the elements into the array: ");
-    for(i=0; i<n; i++)
-    {
-        scanf("%d", &a[i]);
-    } 
-    low = 0;
-    high = n-1;
-    msortdiv(a, low, high);
-    printf("\n array after getting merge sort: ");
-    for(i=0; i<n; i++)    {
-        printf("\n%d ", a[i]);
+void merge(int a[], int low, int mid, int high) {
+    int i = low;
+    int j = mid + 1;
+    int k = low;
+    int temp[100]; 
+    while (i <= mid && j <= high) {
+        if (a[i] <= a[j]) { 
+            temp[k++] = a[i++];
+        } else {
+            temp[k++] = a[j++];
+        }
+    }   
+    while (i <= mid) {
+        temp[k++] = a[i++];
     }
-    return 0;
+    while (j <= high) {
+        temp[k++] = a[j++];
+    }
+    for (i = low; i <= high; i++) {
+        a[i] = temp[i];
+    }
 }
