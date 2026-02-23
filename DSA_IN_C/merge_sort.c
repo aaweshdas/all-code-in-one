@@ -1,3 +1,34 @@
+#include <stdio.h>
+void merge(int a[], int low, int mid, int high)
+{
+    int i, j, k, b[20];
+    i = low;
+    j = mid + 1;
+    k = low;
+    while(i <= mid && j <= high)
+    {
+        if(a[i] >= a[j])
+        {
+            c[k++] = a[j++];
+        }
+        else
+        {
+            c[k++] = a[i++];
+        }
+    }
+    while(i <= mid)
+    {
+        c[k++] = a[i++];
+    }
+    while(j <= high)
+    {
+        c[k++] = a[j++];
+    }
+    for(i = low; i <= high; i++)
+    {
+        a[i] = c[i];
+    }
+}    
 int main()
 {
     int a[20], i, n, low, high;
