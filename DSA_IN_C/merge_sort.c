@@ -37,7 +37,7 @@ int main()
     for(i=0; i<n; i++)
     {
         scanf("%d", &a[i]);
-    }
+    } 
     low = 0;
     high = n-1;
     msortdiv(a, low, high);
