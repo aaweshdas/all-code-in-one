@@ -3,7 +3,7 @@ void merge(int a[], int low, int mid, int high);
 void msortdiv(int a[], int low, int high);
 int main() {
     int a[100], i, n; 
-    printf("Enter the size of array: ");
+    printf("Enter the size of array: "); 
     if (scanf("%d", &n) != 1 || n > 100) {
         printf("Invalid size.\n");
         return 1;  
