@@ -6,7 +6,7 @@ int main() {
     printf("Enter the size of array: ");
     if (scanf("%d", &n) != 1 || n > 100) {
         printf("Invalid size.\n");
-        return 1;
+        return 1; 
     }
     printf("Enter the elements: ");
     for(i = 0; i < n; i++) {
