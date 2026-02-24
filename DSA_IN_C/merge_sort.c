@@ -10,7 +10,7 @@ int main() {
     }
     printf("Enter the elements: ");
     for(i = 0; i < n; i++) {
-        scanf("%d", &a[i]);
+        scanf("%d", &a[i]); 
     }
     msortdiv(a, 0, n - 1);
     printf("\nArray after Merge Sort: ");
